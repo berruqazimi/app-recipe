@@ -1,7 +1,6 @@
 from django.db import models
-from django.contrib.auth.models import BaseUserManager, AbstractBaseUser, PermissionsMixin
-from django.utils import timezone
-
+from django.contrib.auth.models import BaseUserManager,AbstractBaseUser, PermissionsMixin # noqa
+from django.utils import timezone # noqa
 
 
 class UserManager(BaseUserManager):
@@ -12,7 +11,6 @@ class UserManager(BaseUserManager):
         user = self.model(email=email, **extra_fields)
         user.set_password(password)
         user.save(using=self._db)
-
         return user
 
 
